@@ -47,6 +47,8 @@
         _controlHeight = [self.delegate heightForSegmentedControlInSegmentedPager:self];
     }
     
+    [self.segmentedControl removeAll];
+    
     for (NSInteger index = 0; index < _count; index++) {
 
         MXSegment *segment = [self.segmentedControl newSegment];
@@ -74,6 +76,7 @@
     }
 
     [self.segmentedControl setNeedsDisplay];
+    [self.segmentedControl setNeedsLayout];
     
     [self.pager reloadData];
 }
